@@ -1,0 +1,47 @@
+<%= form_with(model: measurer, local: true) do |form| %>
+  <% if measurer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(measurer.errors.count, "error") %> prohibited this measurer from being saved:</h2>
+
+      <ul>
+      <% measurer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <strong>Numero de Servicio:</strong>
+    <%form.label :id_measure %>
+    <%= form.number_field :id_measure, class:"form-control", placeholder:"Ingresar Numero de Servicio"%>
+  </div>
+
+  <div class="field">
+  <strong>Nombre Servicio:</strong>
+    <%form.label :name %>
+    <%= form.text_field :name , class:"form-control", placeholder:"Nombre del Servicio"%>
+  </div>
+
+  <div class="field">
+  <strong>Metros Cuadrados</strong>
+    <% form.label :unin%>
+    <%= form.text_field :uni, class:"form-control", placeholder:"M3"%>
+  </div>
+
+  <div class="field">
+  <strong>Descripcion:</strong>
+    <% form.label :description%>
+    <%= form.text_field :description, class:"form-control", placeholder:"Descripcion"%>
+  </div>
+
+  <div class="field">
+  <strong>Umbral de sobreconsumo</strong>
+    <% form.label :umbrail %>
+    <%= form.number_field :umbrail, class:"form-control", placeholder:"10,00"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

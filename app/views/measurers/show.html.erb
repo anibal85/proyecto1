@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id measure:</strong>
+  <%= @measurer.id_measure %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @measurer.name %>
+</p>
+
+<p>
+  <strong>Uni:</strong>
+  <%= @measurer.uni %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @measurer.description %>
+</p>
+
+<p>
+  <strong>Umbrail:</strong>
+  <%= @measurer.umbrail %>
+</p>
+
+<%= link_to 'Edit', edit_measurer_path(@measurer) %> |
+<%= link_to 'Salir', measurers_path, class:"btn btn-outline-secondary" %>
